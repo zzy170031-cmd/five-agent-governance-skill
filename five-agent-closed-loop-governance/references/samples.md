@@ -5,7 +5,7 @@ Use these samples when opening or governing a real five-agent project thread.
 ## Sample startup line
 
 ```text
-Enable five-agent-governance real five-subagent mode in this project thread.
+Enable five-agent-closed-loop-governance real five-subagent mode in this project thread.
 Launch Maxwell, Dirac, Parfit, Wegener, and Popper as real subagents.
 Current stage: new project startup.
 Current checkpoint: requirements-freeze.
@@ -15,7 +15,7 @@ Current goal: stabilize the problem definition before solutioning.
 ## Sample Chinese startup line
 
 ```text
-本线程启用 five-agent-governance 真实五代理模式。
+本线程启用 five-agent-closed-loop-governance 真实五代理闭环治理模式。
 真实拉起 Maxwell、Dirac、Parfit、Wegener、Popper。
 当前阶段：新项目启动。
 当前检查点：需求冻结前。

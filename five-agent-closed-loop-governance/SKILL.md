@@ -1,11 +1,11 @@
 ---
-name: five-agent-governance
+name: five-agent-closed-loop-governance
 description: Use when the user wants a project thread to start with a real five-subagent governance workflow, or when ongoing project work must be reviewed through Maxwell, Dirac, Parfit, Wegener, and Popper before implementation, merge, release, or repeated correction. Includes the Closed Loop Council upgrade for work that must iterate through five-agent review, Core Challenger acceptance, optional bounded /goal repair, and re-review until closed; Audit Specialist joins only for evidence-sensitive test, commit, release, packaging, artifact, cleanup, or dirty-ownership gates.
 ---
 
-# Five Agent Governance
+# Five Agent Closed Loop Governance
 
-Use this skill to turn a project thread into a real five-subagent working council.
+Use this skill to turn a project thread into a real five-subagent working council with an optional closed-loop repair and re-review mode.
 
 This is not a generic "think harder" skill. It is a strict project governance skill with three jobs:
 
@@ -25,6 +25,7 @@ This is not a generic "think harder" skill. It is a strict project governance sk
 Use this skill when any of the following is true:
 
 - The user explicitly asks for `five-agent-governance`.
+- The user explicitly asks for `five-agent-closed-loop-governance`.
 - The user asks to start a project thread with real five-subagent mode.
 - The user wants a project, feature, refactor, or release process to be governed by named agents.
 - The user expects real subagents, not role-play or a single-agent summary.
@@ -54,7 +55,9 @@ If real subagents cannot be started, say so clearly and stop short of claiming t
 For a new project thread, first check whether the user has provided a clear startup instruction such as:
 
 - `Enable five-agent-governance real five-subagent mode in this project thread`
+- `Enable five-agent-closed-loop-governance real five-subagent mode in this project thread`
 - `Start five-agent-governance and launch Maxwell, Dirac, Parfit, Wegener, and Popper as real subagents`
+- `Start five-agent-closed-loop-governance and launch Maxwell, Dirac, Parfit, Wegener, and Popper as real subagents`
 
 If the user has already said the equivalent in plain language, treat that as sufficient authorization.
 

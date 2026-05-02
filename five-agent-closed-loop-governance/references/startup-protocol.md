@@ -6,8 +6,8 @@ This file defines how a thread enters real five-subagent mode.
 
 Treat the following kinds of user instructions as sufficient startup authorization:
 
-- "本线程启用 five-agent-governance 真实五代理模式"
-- "按 five-agent-governance 启动，并真实拉起 Maxwell、Dirac、Parfit、Wegener、Popper"
+- "本线程启用 five-agent-closed-loop-governance 真实五代理闭环治理模式"
+- "按 five-agent-closed-loop-governance 启动，并真实拉起 Maxwell、Dirac、Parfit、Wegener、Popper"
 - any equivalent plain-language request that clearly asks for real five-subagent governance
 
 ## Boot sequence
@@ -47,4 +47,4 @@ If even one required agent fails to start:
 
 Use a short acknowledgment like:
 
-"本线程已进入 five-agent-governance 启动阶段。我现在真实拉起 Maxwell、Dirac、Parfit、Wegener、Popper，并在全部上线后才进入正式治理。"
+"本线程已进入 five-agent-closed-loop-governance 启动阶段。我现在真实拉起 Maxwell、Dirac、Parfit、Wegener、Popper，并在全部上线后才进入正式治理。"

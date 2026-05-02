@@ -1,6 +1,6 @@
 # Protocol Overview
 
-`five-agent-governance` is a real project-thread governance protocol.
+`five-agent-closed-loop-governance` is a real project-thread governance protocol.
 
 It exists to ensure that a project thread does not move from idea to execution without:
 
