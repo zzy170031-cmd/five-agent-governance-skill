@@ -1,13 +1,13 @@
 ---
 name: five-agent-governance
-description: Use when the user wants a project thread to start with a real five-subagent governance workflow, or when ongoing project work must be reviewed through Maxwell, Dirac, Parfit, Wegener, and Popper before implementation, merge, or release. Best for new projects, major features, architecture changes, and any thread that should explicitly run a real multi-agent council instead of a single-agent shortcut.
+description: Use when the user wants a project thread to start with a real five-subagent governance workflow, or when ongoing project work must be reviewed through Maxwell, Dirac, Parfit, Wegener, and Popper before implementation, merge, release, or repeated correction. Includes the Closed Loop Council upgrade for work that must iterate through five-agent review, Core Challenger acceptance, optional bounded /goal repair, Audit Specialist evidence review, and re-review until closed.
 ---
 
 # Five Agent Governance
 
 Use this skill to turn a project thread into a real five-subagent working council.
 
-This is not a generic "think harder" skill. It is a strict project governance skill with two jobs:
+This is not a generic "think harder" skill. It is a strict project governance skill with three jobs:
 
 1. Detect or request the startup protocol that authorizes real subagent use.
 2. Run the project through the fixed five-agent chain:
@@ -16,6 +16,9 @@ This is not a generic "think harder" skill. It is a strict project governance sk
    - `Parfit`
    - `Wegener`
    - `Popper`
+3. When work is repetitive or failure-prone, run the upgraded closed loop:
+   five-agent review -> Core Challenger scope acceptance -> optional bounded `/goal`
+   repair -> Audit Specialist evidence check -> five-agent/Core re-review.
 
 ## Trigger
 
@@ -25,6 +28,8 @@ Use this skill when any of the following is true:
 - The user asks to start a project thread with real five-subagent mode.
 - The user wants a project, feature, refactor, or release process to be governed by named agents.
 - The user expects real subagents, not role-play or a single-agent summary.
+- The user asks for repeated correction, repeated confirmation, closed-loop review, or `/goal` repair after governance review.
+- The task is a test, QA, release, sample, KB, prompt, validator, runtime, UI, or packaging gate where a first pass may look green while hidden defects remain.
 
 ## Non-trigger
 
@@ -34,6 +39,7 @@ Do not use this skill for:
 - one-off factual Q&A
 - tiny non-project requests
 - threads where the user has not asked for real subagent governance
+- unbounded `/goal` repair where the files, commands, and stop conditions are not authorized
 
 ## Core rule
 
@@ -73,6 +79,12 @@ Use one of two governance modes after boot:
 - `Fast Gate`
   - ongoing implementation inside an already-governed project thread
   - smaller scoped work that still needs the five-agent gate
+- `Closed Loop Council`
+  - repeated correction or repeated test confirmation
+  - sample, KB, prompt, oracle, or human-review guidance closure
+  - runtime, validator, UI, provider, or exporter fixes that can regress after a narrow repair
+  - four-group trace, 16-case, cross-drift, 403-case readiness, release-shell, or packaging-adjacent gates
+  - work where the controller should only receive a report after all in-scope issues close or a blocker appears
 
 Read [references/thread-checkpoints.md](references/thread-checkpoints.md) to choose the right checkpoint and mode.
 
@@ -94,11 +106,17 @@ The chain is strict:
 - `Wegener` interrogates the first three agents twice, then self-reviews twice.
 - `Popper` challenges Wegener three times and issues the final verdict.
 
+Closed Loop Council adds two governance roles after the five agents:
+
+- `Core Challenger`: decides whether the issue scope is truly narrowed, whether `/goal` may start, and whether the post-repair result is only superficially fixed.
+- `Audit Specialist`: reviews evidence, dirty ownership, test artifacts, cleanup state, and whether assertions or gates were weakened. Audit is read-only unless separately authorized.
+
 Read:
 
 - [references/maxwell-discovery.md](references/maxwell-discovery.md)
 - [references/wegener-interrogation.md](references/wegener-interrogation.md)
 - [references/popper-verdict.md](references/popper-verdict.md)
+- [references/closed-loop-governance.md](references/closed-loop-governance.md)
 
 ## Required output discipline
 
@@ -113,6 +131,9 @@ At minimum, keep these visible in the thread:
 - each agent's position
 - Wegener interrogation and self-review results
 - Popper challenge record
+- Core Challenger scope acceptance and post-repair challenge when Closed Loop Council is active
+- Audit Specialist evidence record when Closed Loop Council is active
+- `/goal` authorization, repair rounds, and stop condition when `/goal` is used
 - final governance verdict
 
 ## Gate checks
@@ -125,6 +146,41 @@ Especially protect against:
 - false completeness
 - hidden assumptions presented as confirmed facts
 - skipping the final Popper verdict
+- using `/goal` before the Core Challenger accepts a narrow scope
+- weakening tests, warnings, validators, or release gates to make a loop pass
+- reporting back to the controller while in-scope issues remain repairable
+
+## Closed Loop Council
+
+Use Closed Loop Council when a task needs repeated work/review/repair cycles.
+
+Default sequence:
+
+1. Do the assigned work inside the authorized scope.
+2. Run the listed validation commands, tests, scans, traces, or artifact checks.
+3. Run the five-agent review chain.
+4. Run Core Challenger scope acceptance.
+5. Run Audit Specialist evidence review.
+6. If issues remain inside the authorized scope and `/goal` is explicitly authorized, use `/goal` as the repair executor.
+7. Re-run validation.
+8. Re-run five-agent review, Core Challenger, and Audit Specialist.
+9. Repeat until all issues close or a stop condition is reached.
+
+Use `/goal` only when all of these are true:
+
+- the problem is narrowed to authorized files, fields, commands, and stop conditions
+- Core Challenger accepts the narrowed repair scope
+- the repair is mechanical or bounded enough for a loop
+- the loop cannot enter forbidden actions such as packaging, push, commit, 403-case, or desktop-shell startup unless explicitly authorized
+
+Do not use `/goal` when:
+
+- the problem needs product judgment, release approval, or human approval
+- the scope is still ambiguous
+- the loop would need unauthorized files
+- the only way to pass is to weaken tests, hide warnings, accept fallback-only output, or lower a gate
+
+Controller reports from this mode should happen only when the loop is closed, or when a blocker, scope conflict, environment block, forbidden action, or newer user/controller instruction stops the loop.
 
 ## Downstream tools
 

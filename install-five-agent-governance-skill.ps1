@@ -4,7 +4,7 @@ param(
 
 $ErrorActionPreference = "Stop"
 
-$repoRoot = Split-Path -Parent $PSScriptRoot
+$repoRoot = $PSScriptRoot
 $source = Join-Path $repoRoot "five-agent-governance"
 $target = Join-Path $TargetRoot "five-agent-governance"
 

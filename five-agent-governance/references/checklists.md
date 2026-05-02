@@ -29,6 +29,34 @@ Pause and warn if:
 - the output sounds complete but boundaries are still fuzzy
 - the draft skips unresolved risks or dependencies
 - the thread starts implementation before the governance path is stable
+- a test or sample passes keyword checks but still fails behavior, semantics, or
+  product usefulness
+- a repair appears to close the issue by weakening a gate, hiding a warning, or
+  accepting fallback-only output
+
+## Closed-Loop Entry Check
+
+Before authorizing `/goal` inside Closed Loop Council, confirm:
+
+- the Core Challenger accepts that the issue is narrowed
+- allowed files, forbidden files, commands, and stop conditions are explicit
+- the repair can run without widening scope
+- the loop will re-run five-agent review, Core Challenger, and Audit Specialist
+  after repair
+- `/goal` is not being used to approve release readiness, sample quality,
+  product quality, or human-review gates
+
+## Test-Gate Integrity Check
+
+For QA, CDP, UI trace, 16-case, 403-case, release-shell, or packaging-adjacent
+work, confirm:
+
+- exact commands and key output are recorded
+- artifacts, traces, screenshots, or layout bounds are recorded when applicable
+- warnings, fallback, validators, and provider status remain visible
+- no assertion or gate was weakened to make the test pass
+- cleanup evidence is present when desktop shell, WebView2, CDP, or release
+  shell was involved
 
 ## Reuse Decision Check
 

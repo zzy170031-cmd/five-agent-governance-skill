@@ -77,6 +77,19 @@ This package keeps the governance system portable and versioned independently fr
 - `Wegener`
 - `Popper`
 
+The skill also includes the Closed Loop Council upgrade for repeated correction
+work. Closed Loop Council combines:
+
+- five-agent review
+- Core Challenger scope acceptance and post-repair challenge
+- optional bounded `/goal` repair
+- Audit Specialist evidence and gate-integrity review
+- re-review until all in-scope issues close or a blocker appears
+
+Use it for sample/KB/prompt quality loops, runtime or validator fixes, QA and
+test gates, 16-case or cross-drift checks, 403-case preparation,
+release-shell evidence, and packaging readiness.
+
 ## Versioning
 
 This repository is intended to carry standalone tagged releases so the skill can be reused across machines without depending on a product repository history.
