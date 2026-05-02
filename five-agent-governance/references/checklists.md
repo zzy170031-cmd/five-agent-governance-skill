@@ -39,12 +39,30 @@ Pause and warn if:
 Before authorizing `/goal` inside Closed Loop Council, confirm:
 
 - the Core Challenger accepts that the issue is narrowed
+- the Core Challenger has questioned reasonableness, usefulness,
+  applicability, and major-risk exposure
 - allowed files, forbidden files, commands, and stop conditions are explicit
 - the repair can run without widening scope
-- the loop will re-run five-agent review, Core Challenger, and Audit Specialist
-  after repair
+- the loop will re-run five-agent review and Core Challenger after repair
+- Audit Specialist is active only if the work is test, commit/staging, release,
+  packaging, artifact, cleanup, dirty ownership, or gate-integrity related
 - `/goal` is not being used to approve release readiness, sample quality,
   product quality, or human-review gates
+- once `/goal` starts, intermediate "still needs small fix" reports will not be
+  sent while the issue remains inside the authorized repair scope
+
+## Proportionality Check
+
+Before applying the heaviest governance path, confirm:
+
+- the task genuinely needs repeated review/repair instead of a one-pass Fast
+  Gate
+- the rule is not adding ceremony without reducing risk
+- hard `must` language is reserved for safety, ownership, gate, destructive,
+  secret, runtime source-of-truth, 403-case, packaging, commit, push, or
+  explicit user-boundary rules
+- softer default process is expressed as `should`
+- optional escalation is expressed as `may`
 
 ## Test-Gate Integrity Check
 

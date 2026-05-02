@@ -81,14 +81,24 @@ The skill also includes the Closed Loop Council upgrade for repeated correction
 work. Closed Loop Council combines:
 
 - five-agent review
-- Core Challenger scope acceptance and post-repair challenge
+- Core Challenger repeated questioning of reasonableness, usefulness,
+  applicability, major risks, scope acceptance, and post-repair challenge
 - optional bounded `/goal` repair
-- Audit Specialist evidence and gate-integrity review
+- Audit Specialist evidence and gate-integrity review for test, commit,
+  release, packaging, artifact, cleanup, dirty-ownership, or gate-sensitive work
 - re-review until all in-scope issues close or a blocker appears
 
 Use it for sample/KB/prompt quality loops, runtime or validator fixes, QA and
 test gates, 16-case or cross-drift checks, 403-case preparation,
 release-shell evidence, and packaging readiness.
+
+Closed Loop Council is not meant to hard-code the heaviest process into every
+task. It distinguishes mandatory safety/gate boundaries from default review
+practice and optional escalation, and enters `/goal` only after the Core
+Challenger has reduced major uncertainty and accepted the narrowed repair
+scope. Once `/goal` is active, the expected behavior is to continue
+repairing, validating, and re-reviewing until closed or blocked rather than
+sending repeated small-fix reports back to the controller.
 
 ## Versioning
 

@@ -49,7 +49,12 @@ Use these contracts to keep cross-thread governance stable.
 
 ## CoreChallengerRecord
 
+- `reasonableness_assessment`
+- `usefulness_assessment`
+- `applicability_assessment`
+- `major_risk_assessment`
 - `scope_acceptance`
+- `goal_entry_decision`
 - `disproof_questions`
 - `weakest_evidence`
 - `post_repair_challenge`
@@ -57,6 +62,7 @@ Use these contracts to keep cross-thread governance stable.
 
 ## AuditSpecialistRecord
 
+- `audit_active_reason`
 - `changed_files`
 - `dirty_ownership`
 - `staged_status`
@@ -78,6 +84,10 @@ Use these contracts to keep cross-thread governance stable.
 ## ClosedLoopGovernanceRecord
 
 - `loop_mode`
+- `mode_selection_reason`
+- `rule_proportionality_notes`
+- `audit_active`
+- `audit_active_reason`
 - `initial_work_summary`
 - `five_agent_rounds`
 - `core_challenger_records`
